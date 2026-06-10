@@ -29,6 +29,7 @@ Route::get('/', function () {
     
     // Pass BOTH variables to the view
     return view('welcome', compact('projects', 'brands', 'homepageSetting', 'services', 'features'));
+    
 });
 
 // New About Us Route
@@ -39,6 +40,11 @@ Route::get('/about', function(){
     // Notice the 'pages.' prefix added here!
     return view('pages.about', compact('aboutSetting'));
 })->name('about');
+
+// --- NEW: Corporate Identity Route ---
+Route::view('/corporate-identity', 'corporate-identity')->name('corporate-identity');
+Route::view('/our-team', 'pages.team')->name('team');
+// -------------------------------------
 
 
 // --- NEW: Contact Form Submit Route ---

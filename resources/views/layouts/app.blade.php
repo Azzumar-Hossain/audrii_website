@@ -266,6 +266,7 @@
         <div class="nav-links">
           <a href="{{ url('/') }}" class="nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
           <a href="{{ url('/about') }}" class="nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
+          <a href="{{ route('team') }}" class="nav-link {{ request()->is('our-team') ? 'active' : '' }}">Our Team</a>
           <a href="{{ url('/services') }}" class="nav-link {{ request()->is('services') ? 'active' : '' }}">Services</a>
           <a href="{{ url('/contact') }}" class="nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact</a>
         </div>
@@ -289,10 +290,15 @@
 
   <div id="mobile-menu">
     <button class="mobile-close" onclick="closeMobileMenu()"><i class="fa fa-times"></i></button>
+    
     <a href="{{ url('/') }}" class="mobile-nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
-    <a href="{{ url('/services') }}" class="mobile-nav-link {{ request()->is('services') ? 'active' : '' }}">Services</a>
     <a href="{{ url('/about') }}" class="mobile-nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
+    
+    <a href="{{ route('team') }}" class="mobile-nav-link {{ request()->is('our-team') ? 'active' : '' }}">Our Team</a>
+    
+    <a href="{{ url('/services') }}" class="mobile-nav-link {{ request()->is('services') ? 'active' : '' }}">Services</a>
     <a href="{{ url('/contact') }}" class="mobile-nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact</a>
+    
   </div>
 
   <main>
@@ -327,6 +333,7 @@
             <li><a href="{{ url('/about') }}">About</a></li>
             <li><a href="{{ url('/services') }}">Services</a></li>
             <li><a href="{{ url('/contact') }}">Contact</a></li>
+            <li><a href="{{ route('corporate-identity') }}">Corporate Identity</a></li>
           </ul>
         </div>
         
