@@ -157,20 +157,20 @@
 
             <h3>Company Information</h3>
             <ul>
-                <li><strong>Company Name:</strong> MB "Audrii"</li>
+                <li><strong>Company Name:</strong> MB Audrii</li>
                 <li><strong>Legal Form:</strong> Small Partnership (Mažoji bendrija)</li>
                 <li><strong>Register Code:</strong> 307646126</li>
                 <li><strong>Date of Registration:</strong> 16.04.2026</li>
                 <li><strong>Status:</strong> Registered</li>
                 <li><strong>Status Start Date:</strong> 16.04.2026</li>
             </ul>
-            <p>MB "Audrii" is a Lithuania-registered company providing professional IT solutions, software development, and digital services. The company operates in accordance with Lithuanian and European Union commercial regulations.</p>
+            <p>MB Audrii is a Lithuania-registered company providing professional IT solutions, software development, and digital services. The company operates in accordance with Lithuanian and European Union commercial regulations.</p>
 
             <h3>Registered Office Address</h3>
             <p>
                 Vilnius, Girulių g. 5, LT-12124<br>
                 <span style="font-size: 0.9em; color: var(--text-muted);">Address start date: 16.04.2026</span><br><br>
-                This address serves as the official legal correspondence location of MB "Audrii".
+                This address serves as the official legal correspondence location of MB Audrii.
             </p>
 
             <h3>Directors / Management / Shareholders</h3>
@@ -181,7 +181,7 @@
                 <li><strong>Nationality:</strong>People's Republic of Bangladesh</li>
                 <li><strong>Authorization Start Date:</strong>16.04.2026</li>
             </ul>
-            <p>The Director is authorized to represent the company and make operational and strategic decisions on behalf of MB "Audrii" in accordance with Lithuanian law.</p>
+            <p>The Director is authorized to represent the company and make operational and strategic decisions on behalf of MB Audrii in accordance with Lithuanian law.</p>
 
             <h4>Shareholder</h4>
             <ul>
@@ -215,12 +215,12 @@
             </div>
 
             <h3>Business Structure</h3>
-            <p>MB "Audrii" operates as a Small Partnership (Mažoji bendrija) under Lithuanian corporate law. The company is focused on delivering high-quality digital innovation and retail excellence solutions to businesses and organizations globally.</p>
+            <p>MB Audrii operates as a Small Partnership (Mažoji bendrija) under Lithuanian corporate law. The company is focused on delivering high-quality digital innovation and retail excellence solutions to businesses and organizations globally.</p>
 
             <h3>Official Contact Information</h3>
             <ul>
                 <li><strong>Email:</strong> hasib@audrii.com(Business Email)</li>
-                <li><strong>Phone:</strong> +880 1714029484(Business Phone)</li>
+                <li><strong>Phone:</strong> +880 1713-248567(Business Phone)</li>
                 <li><strong>Address:</strong> Vilnius, Girulių g. 5, LT-12124, Lithuania</li>
                 <li><strong>Website:</strong> <a href="{{ url('/') }}" style="color:var(--brand-accent); text-decoration:none;">www.audrii.com</a></li>
             </ul>

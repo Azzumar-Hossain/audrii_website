@@ -132,8 +132,8 @@
         
         <div class="team-intro">
             <span class="eyebrow">Management</span>
-            <h2>Management Team of MB "Audrii"</h2>
-            <p>MB "Audrii" is led by a dedicated management team responsible for overseeing the company's strategic direction, operational integrity, and service excellence. Our leadership ensures that all business activities are conducted in alignment with professional standards, cybersecurity best practices, and applicable Lithuanian and European Union regulations.</p>
+            <h2>Management Team of MB Audrii</h2>
+            <p>MB Audrii is led by a dedicated management team responsible for overseeing the company's strategic direction, operational integrity, and service excellence. Our leadership ensures that all business activities are conducted in alignment with professional standards, cybersecurity best practices, and applicable Lithuanian and European Union regulations.</p>
             <p>The management team brings a strong commitment to transparency, accountability, and delivering high-quality cybersecurity and IT consulting services to clients across various industries.</p>
         </div>
 
