@@ -118,6 +118,45 @@
       content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
       width: 4px; height: 4px; border-radius: 50%; background: #FF0000;
     }
+
+    /* ===== NEW DROPDOWN CSS ===== */
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #16171e;
+      min-width: 200px;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+      z-index: 1100;
+      border-radius: 10px;
+      padding: 8px 0;
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-top: 2px;
+    }
+    .dropdown-menu a {
+      color: #d1d5db;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+    .dropdown-menu a:hover {
+      background-color: rgba(255,255,255,0.05);
+      color: #ffffff;
+    }
+    .nav-dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
     /* Mobile Active Menu Link */
     .mobile-nav-link:hover, .mobile-nav-link.active { color: #FF0000; }
     .lang-selector {
@@ -143,6 +182,21 @@
     nav.scrolled .logo-text { color: #111827; }
     nav.scrolled .nav-link { color: #4b5563; }
     nav.scrolled .nav-link:hover { color: #111827; background: rgba(0,0,0,0.04); }
+    
+    /* Scrolled dropdown configurations */
+    nav.scrolled .dropdown-menu {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.08);
+    }
+    nav.scrolled .dropdown-menu a {
+      color: #4b5563;
+    }
+    nav.scrolled .dropdown-menu a:hover {
+      background-color: rgba(0,0,0,0.03);
+      color: var(--gold);
+    }
+
     nav.scrolled .lang-selector { color: #4b5563; }
     nav.scrolled .lang-selector:hover { color: var(--gold); }
     nav.scrolled .nav-cta { color: #111827; border-color: #d1d5db; }
@@ -211,7 +265,6 @@
     
     /* ===== FOOTER ===== */
     footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 60px 0 0; }
-    /* UPDATED: Changed grid from 4 columns to 3 columns since Services is gone */
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid var(--border); }
     .footer-brand p { font-size: 14px; color: var(--text-muted); margin-top: 16px; line-height: 1.8; }
     .footer-legal { margin-top: 20px; font-size: 12px; color: var(--text-dim); line-height: 1.8; }
@@ -234,7 +287,6 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
-      /* Hide desktop elements on mobile */
       .nav-links, .nav-cta, .lang-selector { display: none; }
       .hamburger { display: flex; }
       .footer-grid { grid-template-columns: 1fr; }
@@ -265,8 +317,17 @@
         
         <div class="nav-links">
           <a href="{{ url('/') }}" class="nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
-          <a href="{{ url('/about') }}" class="nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
-          <a href="{{ route('team') }}" class="nav-link {{ request()->is('our-team') ? 'active' : '' }}">Our Team</a>
+          
+          <div class="nav-dropdown">
+            <a href="{{ url('/about') }}" class="nav-link {{ request()->is('about') || request()->is('our-team') || request()->is('corporate-identity') ? 'active' : '' }}">
+              About <i class="fa fa-chevron-down" style="font-size: 10px; margin-left: 4px; opacity: 0.7;"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a href="{{ route('team') }}">Our Team</a>
+              <a href="{{ route('corporate-identity') }}">Corporate Identity</a>
+            </div>
+          </div>
+          
           <a href="{{ url('/services') }}" class="nav-link {{ request()->is('services') ? 'active' : '' }}">Services</a>
           <a href="{{ url('/contact') }}" class="nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact</a>
         </div>
@@ -290,15 +351,12 @@
 
   <div id="mobile-menu">
     <button class="mobile-close" onclick="closeMobileMenu()"><i class="fa fa-times"></i></button>
-    
     <a href="{{ url('/') }}" class="mobile-nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
     <a href="{{ url('/about') }}" class="mobile-nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
-    
     <a href="{{ route('team') }}" class="mobile-nav-link {{ request()->is('our-team') ? 'active' : '' }}">Our Team</a>
-    
     <a href="{{ url('/services') }}" class="mobile-nav-link {{ request()->is('services') ? 'active' : '' }}">Services</a>
     <a href="{{ url('/contact') }}" class="mobile-nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact</a>
-    
+    <a href="{{ route('corporate-identity') }}" class="mobile-nav-link {{ request()->is('corporate-identity') ? 'active' : '' }}">Corporate Identity</a>
   </div>
 
   <main>
@@ -317,15 +375,12 @@
             @endif
             <div class="logo-text">{{ $siteName }}</div>
           </a>
-          <p>Comprehensive Solutions for Tech, Finance, and Global Commerce.</p>
+          <p>Engineering digital excellence from the heart of Lithuania. Trusted by 50+ businesses across 14 countries.</p>
           <div class="footer-legal">
             <strong style="color:var(--text-muted);">{{ $siteName }}</strong><br>
-            {{-- UPDATED LINE BELOW: Added nl2br() to allow line breaks --}}
             {!! nl2br(e($siteSettings->contact_address ?? 'Gedimino pr. 45-3, LT-01109 Vilnius, Lithuania')) !!}
           </div>
         </div>
-
-        {{-- The "Services" column was completely removed from here! --}}
 
         <div class="footer-col">
           <h5>Site Navigation</h5>
@@ -341,7 +396,7 @@
             <h5>Contact</h5>
             <ul>
               <li><a href="mailto:{{ $siteSettings->contact_email ?? 'hello@nordvela.lt' }}">{{ $siteSettings->contact_email ?? 'hello@nordvela.lt' }}</a></li>
-              <li><a href="tel:{{ $siteSettings->contact_phone ?? '+37052100440' }}">{{ $siteSettings->contact_phone ?? '+370 5 210 0440' }}</a>(Whatsapp)</li>
+              <li><a href="tel:{{ $siteSettings->contact_phone ?? '+37052100440' }}">{{ $siteSettings->contact_phone ?? '+370 5 210 0440' }}</a></li>
             </ul>
         </div>
       </div>
@@ -380,19 +435,14 @@
     const navbar = document.getElementById('navbar');
     
     window.addEventListener('scroll', () => {
-      // Find the hero section on the current page
       const heroSection = document.querySelector('.hero');
-      let triggerPoint = 50; // Default trigger point for pages without a hero
+      let triggerPoint = 50; 
       
-      // If a hero section exists, calculate exactly 50% of its height
       if (heroSection) {
           triggerPoint = heroSection.offsetHeight / 2;
       }
 
-      // Toggle the 'scrolled' class when the user scrolls past the trigger point
       navbar.classList.toggle('scrolled', window.scrollY > triggerPoint);
-      
-      // Show/Hide Back-to-top button
       document.getElementById('btt').classList.toggle('visible', window.scrollY > 400);
     });
 
