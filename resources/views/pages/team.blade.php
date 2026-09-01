@@ -71,7 +71,7 @@
         margin-bottom: 20px;
     }
 
-    /* Circular Team Layout from your screenshot */
+    /* Circular Team Layout */
     .team-display-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -88,7 +88,7 @@
         height: 220px;
         margin-bottom: 20px;
         overflow: hidden;
-        border-radius: 50%; /* Makes the image perfectly round */
+        border-radius: 50%;
         border: 1px solid #e5e7eb;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     }
@@ -141,7 +141,7 @@
             
             <div class="team-card-profile">
                 <div class="avatar-wrapper">
-                    <img src="{{ file_exists(public_path('images/hasib.jpg')) ? asset('images/hasib.jpg') : 'https://ui-avatars.com/api/?name=Md+Hasib+Hossain&background=006a4e&color=fff&size=300' }}" alt="Md Hasib Hossain">
+                    <img src="{{ file_exists(public_path('assets/images/hasib.jpg')) ? asset('assets/images/hasib.jpg') : 'https://ui-avatars.com/api/?name=Md+Hasib+Hossain&background=006a4e&color=fff&size=300' }}" alt="Md Hasib Hossain">
                 </div>
                 <h5>Md Hasib Hossain</h5>
                 <span>Director</span>
@@ -149,7 +149,7 @@
 
             <div class="team-card-profile">
                 <div class="avatar-wrapper">
-                    <img src="{{ file_exists(public_path('images/burhan.jpg')) ? asset('images/burhan.jpg') : 'https://ui-avatars.com/api/?name=Noshin+Ferdous+Labonno&background=006a4e&color=fff&size=300' }}" alt="Noshin Ferdous Labonno">
+                    <img src="{{ file_exists(public_path('assets/images/labonno.jpg')) ? asset('assets/images/labonno.jpg') : 'https://ui-avatars.com/api/?name=Noshin+Ferdous+Labonno&background=006a4e&color=fff&size=300' }}" alt="Noshin Ferdous Labonno">
                 </div>
                 <h5>Noshin Ferdous Labonno</h5>
                 <span>Shareholder</span>
@@ -157,7 +157,7 @@
 
             <div class="team-card-profile">
                 <div class="avatar-wrapper">
-                    <img src="{{ file_exists(public_path('images/burhan.jpg')) ? asset('images/burhan.jpg') : 'https://ui-avatars.com/api/?name=Farhan+Safin+Hridoy&background=006a4e&color=fff&size=300' }}" alt="Farhan Safin Hridoy">
+                    <img src="{{ file_exists(public_path('assets/images/hridoy.jpg')) ? asset('assets/images/hridoy.jpg') : 'https://ui-avatars.com/api/?name=Farhan+Safin+Hridoy&background=006a4e&color=fff&size=300' }}" alt="Farhan Safin Hridoy">
                 </div>
                 <h5>Farhan Safin Hridoy</h5>
                 <span>Shareholder</span>

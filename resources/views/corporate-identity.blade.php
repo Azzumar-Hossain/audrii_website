@@ -95,7 +95,7 @@
     /* Team Grid Layout */
     .team-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 40px;
         margin-top: 40px;
         margin-bottom: 50px;
@@ -105,14 +105,21 @@
         text-align: left;
     }
 
-    .team-member img {
+    /* ADDED: Circular Avatar Wrapper styles matching team.blade.php */
+    .avatar-wrapper {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        border-radius: 50%; /* Makes the image perfectly round */
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .avatar-wrapper img {
         width: 100%;
-        max-width: 300px;
-        height: auto;
-        border-radius: 8px;
-        margin-bottom: 15px;
+        height: 100%;
         object-fit: cover;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
 
     .team-member h5 {
@@ -177,38 +184,47 @@
             
             <h4>Director</h4>
             <ul>
-                <li><strong>Name:</strong>Md Hasib Hossain</li>
-                <li><strong>Nationality:</strong>People's Republic of Bangladesh</li>
-                <li><strong>Authorization Start Date:</strong>16.04.2026</li>
+                <li><strong>Name:</strong> Md Hasib Hossain</li>
+                <li><strong>Nationality:</strong> People's Republic of Bangladesh</li>
+                <li><strong>Authorization Start Date:</strong> 16.04.2026</li>
             </ul>
             <p>The Director is authorized to represent the company and make operational and strategic decisions on behalf of MB Audrii in accordance with Lithuanian law.</p>
 
             <h4>Shareholder</h4>
             <ul>
-                <li><strong>Name:</strong>Noshin Ferdous Labonno</li>
-                <li><strong>Nationality:</strong>People's Republic of Bangladesh</li>
+                <li><strong>Name:</strong> Noshin Ferdous Labonno</li>
+                <li><strong>Nationality:</strong> People's Republic of Bangladesh</li>
             </ul>
             <p>The Member participates in ownership and governance of the company in accordance with the company's founding documents and Lithuanian corporate regulations.</p>
+            
             <h4>Shareholder</h4>
             <ul>
-                <li><strong>Name:</strong>Farhan Safin Hridoy</li>
-                <li><strong>Nationality:</strong>People's Republic of Bangladesh</li>
+                <li><strong>Name:</strong> Farhan Safin Hridoy</li>
+                <li><strong>Nationality:</strong> People's Republic of Bangladesh</li>
             </ul>
             <p>The Member participates in ownership and governance of the company in accordance with the company's founding documents and Lithuanian corporate regulations.</p>
 
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="{{ asset('images/bikash.jpg') }}" alt="Md Hasib Hossain">
+                    <div class="avatar-wrapper">
+                        <img src="{{ file_exists(public_path('assets/images/hasib.jpg')) ? asset('assets/images/hasib.jpg') : 'https://ui-avatars.com/api/?name=Md+Hasib+Hossain&background=006a4e&color=fff&size=300' }}" alt="Md Hasib Hossain">
+                    </div>
                     <h5>Md Hasib Hossain</h5>
                     <span>Director</span>
                 </div>
+                
                 <div class="team-member">
-                    <img src="{{ asset('images/burhan.jpg') }}" alt="Noshin Ferdous Labonno">
+                    <div class="avatar-wrapper">
+                        <img src="{{ file_exists(public_path('assets/images/labonno.jpg')) ? asset('assets/images/labonno.jpg') : 'https://ui-avatars.com/api/?name=Noshin+Ferdous+Labonno&background=006a4e&color=fff&size=300' }}" alt="Noshin Ferdous Labonno">
+                    </div>
                     <h5>Noshin Ferdous Labonno</h5>
                     <span>Shareholder</span>
                 </div>
+                
                 <div class="team-member">
-                    <img src="{{ asset('images/burhan.jpg') }}" alt="Farhan Safin Hridoy">
+                    <div class="avatar-wrapper">
+                        <img src="{{ file_exists(public_path('assets/images/hridoy.jpg')) ? asset('assets/images/hridoy.jpg') : 'https://ui-avatars.com/api/?name=Farhan+Safin+Hridoy&background=006a4e&color=fff&size=300' }}" alt="Farhan Safin Hridoy">
+                    </div>
                     <h5>Farhan Safin Hridoy</h5>
                     <span>Shareholder</span>
                 </div>
@@ -219,8 +235,8 @@
 
             <h3>Official Contact Information</h3>
             <ul>
-                <li><strong>Email:</strong> hasib@audrii.com(Business Email)</li>
-                <li><strong>Phone:</strong> +880 1713-248567(Business Phone)</li>
+                <li><strong>Email:</strong> hasib@audrii.com (Business Email)</li>
+                <li><strong>Phone:</strong> +880 1714-029484(Whatsapp),+880 1713-248567 (Business Phone)</li>
                 <li><strong>Address:</strong> Vilnius, Girulių g. 5, LT-12124, Lithuania</li>
                 <li><strong>Website:</strong> <a href="{{ url('/') }}" style="color:var(--brand-accent); text-decoration:none;">www.audrii.com</a></li>
             </ul>
